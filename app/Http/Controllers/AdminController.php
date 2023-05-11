@@ -19,7 +19,7 @@ class AdminController extends Controller
 
         $image = $request->file;
 
-        $imageName = time() . '.' . $image->getClientoriginalExtension();
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
         $request->file->move('doctorImage', $imageName);
         $doctor->image = $imageName;
 
@@ -29,7 +29,8 @@ class AdminController extends Controller
         $doctor->room = $request->room;
 
         $doctor->save();
-        // return back()->with('message', 'Doctor Uploaded Successfully');
-        return redirect()->back();
+
+        return  redirect()->back()->with('message', 'Doctor Added Successfully');
+        // return redirect()->back();
     }
 }
