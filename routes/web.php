@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Homecontroller;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Frontend Controller
 
 Route::get('/', [Homecontroller::class, 'index']);
 
@@ -28,3 +30,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+// Backend Controller
+Route::get('/add_doctor_view', [AdminController::class, 'addview']);
+Route::post('/upload_doctor', [AdminController::class, 'upload']);
