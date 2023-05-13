@@ -48,10 +48,11 @@
 
         {{-- Showing Message --}}
         @if (session()->has('message'))
-          <div class="alert alert-success">
+          <div class="alert alert-success alert-dismissible fade show">
 
-            {{ session()->get('message') }}
-            <button type="button" class="close" data-bs-dismiss="alert">x</button>
+            <strong> {{ session()->get('message') }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert">X</button>
+
           </div>
         @endif
 
@@ -61,17 +62,17 @@
 
           <div style="padding: 15px">
             <label for="doctor">Doctor Name</label>
-            <input type="text" style="color:black" name="name" placeholder="write the Name">
+            <input type="text" style="color:black" name="name" required="" placeholder="write the Name">
           </div>
 
           <div style="padding: 15px">
             <label for="Phone">Doctor's Phone</label>
-            <input type="number" style="color:black" name="number" placeholder="write the Phone Nb">
+            <input type="number" style="color:black" name="number" required="" placeholder="write the Phone Nb">
           </div>
 
           <div style="padding: 15px">
             <label for="Speciality">Doctor's Speciality</label>
-            <select name="speciality" style="color:black; width:210px; ">
+            <select name="speciality" required="" style="color:black; width:210px; ">
               <option value="" disabled selected>Select One</option>
               <option value="skin">Skin</option>
               <option value="heart">Heart</option>
@@ -82,7 +83,7 @@
 
           <div style="padding: 15px">
             <label for="room">Room No</label>
-            <input type="text" style="color:black" name="room" placeholder="write the Room No">
+            <input type="text" style="color:black" name="room" required="" placeholder="write the Room No">
           </div>
 
           <div style="padding: 15px">
