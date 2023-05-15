@@ -74,10 +74,13 @@
             <label for="Speciality">Doctor's Speciality</label>
             <select name="speciality" required="" style="color:black; width:210px; ">
               <option value="" disabled selected>Select One</option>
-              <option value="skin">Skin</option>
-              <option value="heart">Heart</option>
-              <option value="eye">Eye</option>
-              <option value="gynochologist">Gynochologist</option>
+              <option value="Ophthalmologists">Ophthalmologists</option>
+              <option value="Cardiologists">Cardiologists</option>
+              <option value="Endocrinologists">Endocrinologists</option>
+              <option value="Gynecologists">Gynecologists</option>
+              <option value="Dermatologists">Dermatologists</option>
+              <option value="Nephrologists">Nephrologists</option>
+              <option value="Neurologists">Neurologists</option>
             </select>
           </div>
 

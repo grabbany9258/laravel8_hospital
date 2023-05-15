@@ -91,7 +91,7 @@
               @auth
 
                 {{-- <h4>user is logged in!</h4> --}}
-                {{-- for logout --}}
+                {{-- x-app-layout for default system logout --}}
                 <x-app-layout>
                 </x-app-layout>
               @else
@@ -109,7 +109,16 @@
       </div> <!-- .container -->
     </nav>
   </header>
+  <div class="container" align="center">
+    @if (session()->has('message'))
+      <div class="alert alert-success alert-dismissible fade show">
 
+        {{ session()->get('message') }}
+        <button type="button" class="close" data-dismiss="alert">X</button>
+
+      </div>
+    @endif
+  </div>
   <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
     <div class="hero-section">
       <div class="container text-center wow zoomIn">
