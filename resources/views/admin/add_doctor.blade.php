@@ -48,7 +48,7 @@
 
         {{-- Showing Message --}}
         @if (session()->has('message'))
-          <div class="alert alert-success alert-dismissible fade show">
+          <div class="alert alert-success alert-dismissible fade show" id="alert">
 
             <strong> {{ session()->get('message') }}</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert">X</button>
@@ -106,6 +106,16 @@
   <!-- page-body-wrapper ends -->
   </div>
   @include('admin.script')
+
+  {{-- Script for removing Succesful Flash message automatically --}}
+
+  <script>
+    $('document').ready(function() {
+      setTimeout(function() {
+        $('div.alert').remove()
+      }, 2000);
+    })
+  </script>
 </body>
 
 </html>

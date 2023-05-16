@@ -100,10 +100,10 @@
     </nav>
   </header>
 
-  {{-- Showuing Apoinments successful message --}}
+  {{-- Showing Apoinments successful message --}}
   <div class="container" align="center">
     @if (session()->has('message'))
-      <div class="alert alert-success alert-dismissible fade show">
+      <div class="alert alert-success alert-dismissible fade show" id="alert">
 
         {{ session()->get('message') }}
         <button type="button" class="close" data-dismiss="alert">X</button>
@@ -203,6 +203,19 @@
   @include('user.footer')
 
   @include('user.script')
+
+  {{-- script for Flash message auto time Out --}}
+
+  <script>
+    $('document').ready(function() {
+
+      setTimeout(function() {
+
+        $('div.alert').remove();
+
+      }, 2000);
+    });
+  </script>
 
 
 
