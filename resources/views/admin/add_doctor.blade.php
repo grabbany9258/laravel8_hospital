@@ -44,7 +44,7 @@
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
 
-      <div class="container" align="center" style="padding-top:100px ">
+      <div class="container" align="center" style="padding-top:50px ">
 
         {{-- Showing Message --}}
         @if (session()->has('message'))
@@ -59,6 +59,8 @@
         <form action="{{ url('upload_doctor') }}" method="POST" enctype="multipart/form-data">
 
           @csrf
+
+          <h1 class="mb-3 bg-primary">Add Doctor</h1>
 
           <div style="padding: 15px">
             <label for="doctor">Doctor Name</label>
@@ -90,7 +92,7 @@
           </div>
 
           <div style="padding: 15px">
-            <label for="room">Doctor Image</label>
+            <label for="room" style="margin-left: 117px">Doctor Image</label>
             <input type="file" name="file">
           </div>
 

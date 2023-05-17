@@ -101,7 +101,7 @@
   </header>
 
   <div class="container">
-    <h6 class="text-center mt-5 mb-3">Appoinment List</h6>
+    <h3 class="text-center mt-5 mb-4 bg-primary">Appointment List</h3>
 
     <table class="table table-bordered table-striped text-center">
       <tr>
