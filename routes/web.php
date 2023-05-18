@@ -21,6 +21,7 @@ Route::get('/', [Homecontroller::class, 'index']);
 
 Route::get('/home', [Homecontroller::class, 'redirect']);
 
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -36,13 +37,18 @@ Route::get('/add_doctor_view', [AdminController::class, 'addview']);
 
 Route::post('/upload_doctor', [AdminController::class, 'upload']);
 
-Route::post('/appoinment', [Homecontroller::class, 'appoinment']);
+// Start Appointment link & Create Appointment
+Route::get('/appoint', [Homecontroller::class, 'appoint']);
+Route::post('/appoinment', [Homecontroller::class, 'appoint_Create']);
+// end Appointment link & Create Appointment
+
 
 Route::get('/myappoinment', [Homecontroller::class, 'myappoinment']);
 
 Route::get('/cancel_appoint/{id}', [Homecontroller::class, 'cancel_appoint']);
 
 Route::get('/show_appointment', [AdminController::class, 'show_appointment']);
+
 
 
 // for approve & cancel apointment

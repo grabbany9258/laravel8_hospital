@@ -38,10 +38,19 @@ class Homecontroller extends Controller
         }
     }
 
-    // for appoinment
+    // For Appointment route
 
-    public function appoinment(Request $request)
+    public function appoint()
     {
+        $doctor = doctor::all();
+        return view('user.appoinment', compact('doctor'));
+    }
+
+    // for appoinment Create
+
+    public function appoint_Create(Request $request)
+    {
+
         $data = new appoinment();
         $data->name = $request->name;
         $data->email = $request->email;
@@ -55,10 +64,10 @@ class Homecontroller extends Controller
         }
         $data->save();
 
-        return redirect()->back()->with('message', 'Apoinment Request successful, We will contact you soon');
+        return redirect()->back()->with('message', 'Apointment Request successful, We will contact you soon');
     }
 
-    // For MyAppoinment
+    // For Viewing MyAppoinment
     public function myappoinment()
     {
         if (Auth::id()) //this auth for stoping url going without auth

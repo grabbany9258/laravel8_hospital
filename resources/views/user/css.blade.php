@@ -5,7 +5,7 @@
 
 <meta name="copyright" content="MACode ID, https://macodeid.com/">
 
-<title>One Health - Medical Center HTML5 Template</title>
+<title>Shifa HealthCare</title>
 
 <link rel="stylesheet" href="../assets/css/maicons.css">
 
