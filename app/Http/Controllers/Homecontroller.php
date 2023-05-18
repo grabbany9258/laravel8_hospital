@@ -40,10 +40,10 @@ class Homecontroller extends Controller
 
     // For Appointment route
 
-    public function appoint()
+    public function appointment()
     {
         $doctor = doctor::all();
-        return view('user.appoinment', compact('doctor'));
+        return view('user.appointment', compact('doctor'));
     }
 
     // for appoinment Create

@@ -38,8 +38,10 @@ Route::get('/add_doctor_view', [AdminController::class, 'addview']);
 Route::post('/upload_doctor', [AdminController::class, 'upload']);
 
 // Start Appointment link & Create Appointment
-Route::get('/appoint', [Homecontroller::class, 'appoint']);
-Route::post('/appoinment', [Homecontroller::class, 'appoint_Create']);
+// Route::get('/appoint', [Homecontroller::class, 'appoint']);
+Route::get('/appointment', [Homecontroller::class, 'appointment']);
+Route::post('/appoint', [Homecontroller::class, 'appoint_Create']);
+// Route::post('/appoinment', [Homecontroller::class, 'appoint_Create']);
 // end Appointment link & Create Appointment
 
 

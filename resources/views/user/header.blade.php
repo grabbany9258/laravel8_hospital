@@ -46,7 +46,7 @@
             <a class="nav-link" href="{{ url('/') }}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/appoint') }}">Appointment</a>
+            <a class="nav-link" href="{{ url('/appointment') }}">Appointment</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="doctors.html">Doctors</a>
