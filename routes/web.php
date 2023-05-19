@@ -37,6 +37,12 @@ Route::get('/add_doctor_view', [AdminController::class, 'addview']);
 
 Route::post('/upload_doctor', [AdminController::class, 'upload']);
 
+// Doctor individual page
+
+Route::get('/doctors', [Homecontroller::class, 'doctors_fun']);
+Route::get('/contact', [Homecontroller::class, 'contact']);
+Route::get('/blog', [Homecontroller::class, 'news']);
+
 // Start Appointment link & Create Appointment
 // Route::get('/appoint', [Homecontroller::class, 'appoint']);
 Route::get('/appointment', [Homecontroller::class, 'appointment']);

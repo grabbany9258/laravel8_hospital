@@ -6,7 +6,7 @@
           <div class="site-info">
             <a href="#"><span class="mai-call text-primary"></span> +00 123 4455 6666</a>
             <span class="divider">|</span>
-            <a href="#"><span class="mai-mail text-primary"></span> mail@example.com</a>
+            <a href="#"><span class="mai-mail text-primary"></span> shifa@gmail.com</a>
           </div>
         </div>
         <div class="col-sm-4 text-right text-sm">
@@ -49,13 +49,13 @@
             <a class="nav-link" href="{{ url('/appointment') }}">Appointment</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="doctors.html">Doctors</a>
+            <a class="nav-link" href="{{ url('/doctors') }}">Doctors</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="blog.html">News</a>
+            <a class="nav-link" href="{{ url('/blog') }}">News</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
           </li>
 
           @if (Route::has('login'))

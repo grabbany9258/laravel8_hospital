@@ -89,4 +89,25 @@ class Homecontroller extends Controller
         $data->delete();
         return redirect()->back();
     }
+
+    // Doctor Page
+
+    public function doctors_fun()
+    {
+        $doctor = doctor::all();
+        return view('user.doctor_page', compact('doctor'));
+    }
+
+    // Contact Page
+
+    public function contact()
+    {
+        return view('user.contact');
+    }
+
+    // Blog/News Page
+    public function news()
+    {
+        return view('user.news');
+    }
 }
