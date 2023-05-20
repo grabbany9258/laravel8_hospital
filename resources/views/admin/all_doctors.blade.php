@@ -34,35 +34,44 @@
     <!-- partial -->
     @include('admin.navbar')
     <!-- partial -->
+    <div class="container-fluid page-body-wrapper ">
 
-    <div class="container-fluid page-body-wrapper ms-5">
+
       <div class="mb-5">
-        <table class="table table-striped table-bordered text-center">
-          <h2 class="text-center mt-5 mb-4">Appointment List</h2>
+        {{-- Showing Message --}}
+        @if (session()->has('message'))
+          <div class="alert alert-success alert-dismissible fade show" id="alert">
 
-          <tr class="table-warning">
-            <th>Patient Name</th>
-            <th>Email</th>
-            <th>Phone</th>
+            <strong> {{ session()->get('message') }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert">X</button>
+
+          </div>
+        @endif
+
+        <table class="table table-striped table-bordered text-center">
+          <h2 class="text-center mt-5 mb-4">All Doctors List</h2>
+
+          <tr class="table-dark text-light">
             <th>Doctor Name</th>
-            <th>Date</th>
-            <th>Message</th>
-            <th>Status</th>
-            <th>Approved</th>
-            <th>Canceled</th>
+            <th>Phone</th>
+            <th>Speciality</th>
+            <th>Room No</th>
+            <th>Image</th>
+            <th>Update</th>
+            <th>Delete</th>
           </tr>
 
-          @foreach ($data as $appoint)
+          @foreach ($data as $doctor)
             <tr class="table-success">
-              <td>{{ $appoint->name }}</td>
-              <td>{{ $appoint->email }}</td>
-              <td>{{ $appoint->phone }}</td>
-              <td>{{ $appoint->doctor }}</td>
-              <td>{{ $appoint->date }}</td>
-              <td>{{ $appoint->message }}</td>
-              <td>{{ $appoint->status }}</td>
-              <td><a class="btn btn-success" href="{{ url('approved', $appoint->id) }}">Approved</a></td>
-              <td><a class="btn btn-danger" href="{{ url('canceled', $appoint->id) }}">Canceled</a></td>
+              <td>{{ $doctor->name }}</td>
+              <td>{{ $doctor->phone }}</td>
+              <td>{{ $doctor->speciality }}</td>
+              <td>{{ $doctor->room }}</td>
+              <td><img src="doctorImage/{{ $doctor->image }}"></td>
+
+              <td><a class="btn btn-success" href="{{ url('edit_doctor', $doctor->id) }}">Edit</a></td>
+              <td><a onclick="return confirm('Are You Sure to Delete ?')" class="btn btn-danger"
+                  href="{{ url('delete_doctor', $doctor->id) }}">Delete</a></td>
             </tr>
           @endforeach
 
@@ -70,13 +79,19 @@
       </div>
 
     </div>
-
-
     <!-- main-panel ends -->
   </div>
   <!-- page-body-wrapper ends -->
   </div>
   @include('admin.script')
+
+  <script>
+    $('document').ready(function() {
+      setTimeout(function() {
+        $('div.alert').remove()
+      }, 2000);
+    })
+  </script>
 </body>
 
 </html>

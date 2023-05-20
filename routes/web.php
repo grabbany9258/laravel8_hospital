@@ -64,3 +64,11 @@ Route::get('/show_appointment', [AdminController::class, 'show_appointment']);
 Route::get('/approved/{id}', [AdminController::class, 'approved']);
 
 Route::get('/canceled/{id}', [AdminController::class, 'canceled']);
+
+// For Deleting & updating doctor
+Route::get('/delete_doctor/{id}', [AdminController::class, 'delete_doctor']);
+Route::get('/edit_doctor/{id}', [AdminController::class, 'edit_doctor']);
+Route::post('/update_doctor/{id}', [AdminController::class, 'update_doctor']);
+
+// Showing All Doctors
+Route::get('/alldoctors', [AdminController::class, 'allDoctors']);
