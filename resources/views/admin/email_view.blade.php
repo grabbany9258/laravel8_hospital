@@ -35,7 +35,7 @@
           </div>
         @endif
 
-        <form action="{{ url('upload_doctor') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ url('sendemail', $data->id) }}" method="POST">
 
           @csrf
 
@@ -48,7 +48,7 @@
 
           <div style="padding: 15px">
             <label for="Body">Body</label>
-            <input type="number" style="color:black" name="body" required="">
+            <input type="text" style="color:black" name="body" required="">
           </div>
 
 

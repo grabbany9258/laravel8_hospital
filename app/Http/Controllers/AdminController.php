@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Appoinment;
 use App\Models\Doctor;
 use Illuminate\Http\Request;
+use Notification;
+use App\Notifications\SendEmailNotification;
+
+
 
 class AdminController extends Controller
 {
@@ -112,8 +116,27 @@ class AdminController extends Controller
 
     // fOR email send in show_appointment page
 
-    public function emailview()
+    public function emailview($id)
     {
-        return view('admin.email_view');
+        $data = Appoinment::find($id);
+        return view('admin.email_view', compact('data'));
+    }
+
+    // Send email
+    public function sendemail(Request $request, $id)
+    {
+        $data = Appoinment::find($id);
+        $details = [
+            'greeting' => $request->greeting,
+            'body' => $request->body,
+            'actiontext' => $request->actiontext,
+            'actionurl' => $request->actionurl,
+            'endpart' => $request->endpart
+
+        ];
+
+        Notification::send($data, new SendEmailNotification($details));
+
+        return redirect()->back();
     }
 }

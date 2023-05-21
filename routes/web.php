@@ -68,6 +68,8 @@ Route::get('/canceled/{id}', [AdminController::class, 'canceled']);
 
 Route::get('/emailview/{id}', [AdminController::class, 'emailview']);
 
+Route::post('/sendemail/{id}', [AdminController::class, 'sendemail']);
+
 
 
 // For Deleting & updating doctor
