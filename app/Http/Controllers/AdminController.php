@@ -109,4 +109,11 @@ class AdminController extends Controller
         $data->save();
         return redirect('/alldoctors')->with('message', "Doctor Updated Successfully");
     }
+
+    // fOR email send in show_appointment page
+
+    public function emailview()
+    {
+        return view('admin.email_view');
+    }
 }

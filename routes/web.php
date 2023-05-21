@@ -60,11 +60,15 @@ Route::get('/show_appointment', [AdminController::class, 'show_appointment']);
 
 
 
-// for approve & cancel apointment
+// for approve & cancel apointment & Email SEND
 
 Route::get('/approved/{id}', [AdminController::class, 'approved']);
 
 Route::get('/canceled/{id}', [AdminController::class, 'canceled']);
+
+Route::get('/emailview/{id}', [AdminController::class, 'emailview']);
+
+
 
 // For Deleting & updating doctor
 Route::get('/delete_doctor/{id}', [AdminController::class, 'delete_doctor']);
