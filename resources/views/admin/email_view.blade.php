@@ -39,33 +39,34 @@
 
           @csrf
 
-          <h1 class="mb-3 bg-primary">Email Send</h1>
+          <h1 class="mb-3 bg-primary">Email Send to User</h1>
 
           <div style="padding: 15px">
             <label for="greeting">Greeting</label>
-            <input type="text" style="color:black" name="greeting" required="">
+            <input type="text" style="color:black" name="greeting" required="" placeholder="Write a Greeting.. ">
           </div>
 
           <div style="padding: 15px">
             <label for="Body">Body</label>
-            <input type="text" style="color:black" name="body" required="">
+            <input type="text" style="color:black" name="body" required="" placeholder="Write Some Message">
           </div>
 
 
 
           <div style="padding: 15px">
             <label for="action text">Action Text</label>
-            <input type="text" style="color:black" name="actiontext" required="">
+            <input type="text" style="color:black" name="actiontext" required=""
+              placeholder="Write Text For Click">
           </div>
 
           <div style="padding: 15px">
             <label for="action url">Action Url</label>
-            <input type="text" style="color:black" name="actionurl" required="">
+            <input type="text" style="color:black" name="actionurl" required="" placeholder="Write Your Link">
           </div>
 
           <div style="padding: 15px">
             <label for="End Part">End Part</label>
-            <input type="text" style="color:black" name="endpart" required="">
+            <input type="text" style="color:black" name="endpart" required="" placeholder="Last Greetings">
           </div>
 
 

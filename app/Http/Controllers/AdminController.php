@@ -137,6 +137,6 @@ class AdminController extends Controller
 
         Notification::send($data, new SendEmailNotification($details));
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Email Send Successfully to User');
     }
 }
